@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<body class="text-center">
+    <form method="POST" class="form-signin" style="color:white">
+
+        <br>
+
+        <div class="container">
+            {{ form.hidden_tag() }}
+
+
+            <label>Choose currency:</label>
+            <select name="selection" class="form-control">
+                {% for currency in currencies %}
+                    <option>{{ currency }}</option>
+                {% endfor %}
+            </select>
+
+            {{ form.amount.label() }}
+            {{ form.amount(class="form-control") }}
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+        </div>
+
+    </form>
+
+</body>
+
+
+{% endblock %}

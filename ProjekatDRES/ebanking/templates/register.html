@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+
+            {{ form.hidden_tag() }}
+
+            {{ form.name.label() }}
+            {{ form.name(class="form-control", placeholder="Name") }}
+
+            {{ form.lastname.label() }}
+            {{ form.lastname(class="form-control", placeholder="Lastname") }}
+
+            {{ form.address.label() }}
+            {{ form.address(class="form-control", placeholder="Address") }}
+
+            {{ form.city.label() }}
+            {{ form.city(class="form-control", placeholder="City") }}
+
+            {{ form.country.label() }}
+            {{ form.country(class="form-control", placeholder="Country") }}
+
+            {{ form.phone_number.label() }}
+            {{ form.phone_number(class="form-control", placeholder="Phone number") }}
+
+            {{ form.email.label() }}
+            {{ form.email(class="form-control", placeholder="Email") }}
+
+            {{ form.password.label() }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+
+            {{ form.confirm.label() }}
+            {{ form.confirm(class="form-control", placeholder="Confirm password") }}
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+            <br>
+            <br>
+
+        </form>
+    </div>
+</body>
+
+
+{% endblock %}

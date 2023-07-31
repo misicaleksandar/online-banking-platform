@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+
+        <form method="POST" action="/sort">
+            <label>Sort by amount:</label>
+            <select name="selection" class="form-control">
+                <option>Ascending</option>
+                <option>Descending</option>
+            </select>
+            <input type="submit" class="btn btn-lg btn-block btn-primary"/>
+        </form>
+
+        <br/>
+
+         <form method="POST" action="/search">
+            <label>Sender:</label>
+            <input type="text" name="sender">
+            <label>Receiver:</label>
+            <input type="text" name="receiver">
+            <label>Amount:</label>
+            <input type="number" name="amountOd" placeholder="Od">
+            <input type="number" name="amountDo" placeholder="Do">
+            <input type="submit" class="btn btn-lg btn-block btn-primary"/>
+        </form>
+
+        <br>
+
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Sender</th>
+                    <th scope="col">Receiver</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">State</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ transaction.sender }}</td>
+                        <td>{{ transaction.receiver }}</td>
+                        <td>{{ transaction.amount }}</td>
+                        <td>{{ transaction.state }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+{% endblock %}

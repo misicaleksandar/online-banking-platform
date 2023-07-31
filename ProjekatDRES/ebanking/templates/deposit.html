@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:white">
+            {{ form.hidden_tag() }}
+
+            <h1>Card balance: {{ card_balance }} RSD</h1>
+
+
+            {{ form.amount.label() }}
+            {{ form.amount(class="form-control", placeholder="Amount") }}
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:white">
+            {{ form.hidden_tag() }}
+
+
+            {{ form.select.label() }}
+            {{ form.select(class="form-control") }}
+
+            {{ form.to.label() }}
+            {{ form.to(class="form-control", placeholder="Enter email or card number") }}
+
+            {{ form.amount.label() }}
+            {{ form.amount(class="form-control", placeholder="Amount") }}
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</body>
+
+
+{% endblock %}

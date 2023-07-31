@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:white">
+            {{ form.hidden_tag() }}
+
+            {{ form.number.label() }}
+            {{ form.number(class="form-control", placeholder="Number") }}
+
+            {{ form.name.label() }}
+            {{ form.name(class="form-control", placeholder="Name") }}
+
+            {{ form.expiration_day.label() }}
+            {{ form.expiration_day(class="form-control", placeholder="Expiration day") }}
+
+            {{ form.security_code.label() }}
+            {{ form.security_code(class="form-control", placeholder="Security code") }}
+
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</body>
+
+
+{% endblock %}
